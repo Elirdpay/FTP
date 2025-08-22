@@ -1,0 +1,39 @@
+{
+  "pages": {
+    "/_app": [
+      "static/chunks/[root-of-the-server]__e2ed98db._.js",
+      "static/chunks/b0c19_react-dom_89a60d02._.js",
+      "static/chunks/b0c19_d3259091._.js",
+      "static/chunks/[root-of-the-server]__4e62c68d._.js",
+      "static/chunks/workspaces_FTP_pages__app_5771e187._.js",
+      "static/chunks/workspaces_FTP_pages__app_342f6d9c._.js"
+    ],
+    "/_error": [
+      "static/chunks/[root-of-the-server]__c69256f4._.js",
+      "static/chunks/b0c19_react-dom_89a60d02._.js",
+      "static/chunks/b0c19_d3259091._.js",
+      "static/chunks/[root-of-the-server]__be58c435._.js",
+      "static/chunks/workspaces_FTP_pages__error_5771e187._.js",
+      "static/chunks/workspaces_FTP_pages__error_76ca58f2._.js"
+    ]
+  },
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [
+    "static/chunks/b0c19_next_dist_build_polyfills_polyfill-nomodule.js"
+  ],
+  "lowPriorityFiles": [
+    "static/development/_ssgManifest.js",
+    "static/development/_buildManifest.js"
+  ],
+  "rootMainFiles": [
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_7cea7f21._.js",
+    "static/chunks/b0c19_next_dist_compiled_42d6607b._.js",
+    "static/chunks/b0c19_next_dist_client_13bbd83e._.js",
+    "static/chunks/b0c19_next_dist_0fbd7245._.js",
+    "static/chunks/b0c19_@swc_helpers_cjs_3ebff39f._.js",
+    "static/chunks/workspaces_FTP_e69f0d32._.js",
+    "static/chunks/workspaces_FTP_1124fabf._.js"
+  ],
+  "ampFirstPages": []
+}
