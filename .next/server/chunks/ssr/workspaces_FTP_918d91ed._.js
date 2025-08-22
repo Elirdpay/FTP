@@ -108,24 +108,24 @@ const metadata = {
 };
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
-        "data-orchids-id": "src/app/layout.tsx:18:4",
+        "data-orchids-id": "src/app/layout.tsx:21:4",
         "data-orchids-name": "html",
         lang: "en",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
-            "data-orchids-id": "src/app/layout.tsx:19:6",
+            "data-orchids-id": "src/app/layout.tsx:22:6",
             "data-orchids-name": "body",
             className: "antialiased",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$src$2f$components$2f$ErrorReporter$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                    "data-orchids-id": "src/app/layout.tsx:20:8",
+                    "data-orchids-id": "src/app/layout.tsx:24:8",
                     "data-orchids-name": "ErrorReporter"
                 }, void 0, false, {
                     fileName: "[project]/workspaces/FTP/src/app/layout.tsx",
-                    lineNumber: 20,
+                    lineNumber: 24,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                    "data-orchids-id": "src/app/layout.tsx:21:8",
+                    "data-orchids-id": "src/app/layout.tsx:25:8",
                     "data-orchids-name": "Script",
                     src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js",
                     strategy: "afterInteractive",
@@ -137,27 +137,27 @@ function RootLayout({ children }) {
                     "data-custom-data": '{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
                 }, void 0, false, {
                     fileName: "[project]/workspaces/FTP/src/app/layout.tsx",
-                    lineNumber: 21,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, this),
                 children,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$src$2f$visual$2d$edits$2f$VisualEditsMessenger$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                    "data-orchids-id": "src/app/layout.tsx:32:8",
+                    "data-orchids-id": "src/app/layout.tsx:36:8",
                     "data-orchids-name": "VisualEditsMessenger"
                 }, void 0, false, {
                     fileName: "[project]/workspaces/FTP/src/app/layout.tsx",
-                    lineNumber: 32,
+                    lineNumber: 36,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/workspaces/FTP/src/app/layout.tsx",
-            lineNumber: 19,
+            lineNumber: 22,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/workspaces/FTP/src/app/layout.tsx",
-        lineNumber: 18,
+        lineNumber: 21,
         columnNumber: 5
     }, this);
 }

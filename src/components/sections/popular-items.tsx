@@ -188,15 +188,7 @@ export default function PopularItems() {
         ))}
       </div>
 
-      {/* Bottom CTA */}
-      <div className="text-center">
-        <div className="inline-flex items-center gap-3 px-8 py-4 bg-muted border border-stroke rounded-2xl">
-          <TrendingUp className="w-5 h-5 text-brand" />
-          <span className="text-muted-foreground">
-            Более 1000 популярных товаров доступны в нашем каталоге
-          </span>
-        </div>
-      </div>
+
     </section>
   );
 }

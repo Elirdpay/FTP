@@ -1,0 +1,37 @@
+.footer {
+  padding: 2rem 1rem;
+  background: #f8f8f8;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.footer h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.authors {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.author img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  object-fit: cover;
+}
+
+.author span {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}

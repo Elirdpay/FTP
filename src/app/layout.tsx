@@ -3,6 +3,8 @@ import "./globals.css";
 import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
+import ParticlesBackground from "../components/ParticlesBackground";
+import Footer from "../components/Footer.jsx";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased flex flex-col min-h-screen">
+        <ParticlesBackground />
         <ErrorReporter />
         <Script
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js"
@@ -28,7 +31,8 @@ export default function RootLayout({
           data-debug="true"
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
-        {children}
+        <main className="flex-1">{children}</main>
+        <Footer />   {/* 👈 футер теперь тут */}
         <VisualEditsMessenger />
       </body>
     </html>
