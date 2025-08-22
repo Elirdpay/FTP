@@ -11,7 +11,8 @@ const bannerData = [
     description: 'Плати меньше — получай больше',
     discount: 'До 20% скидка',
     buttonText: 'Купить сейчас',
-    background: 'linear-gradient(135deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)',
+  background: undefined,
+  image: '/banner-genshin-new.png',
     href: '#genshin'
   },
   {
@@ -83,7 +84,9 @@ const HeroBanner = () => {
                     ? 'opacity-0 -translate-x-full' 
                     : 'opacity-0 translate-x-full'
               }`}
-              style={{ background: banner.background }}
+              style={banner.image ? {
+                background: `url(${banner.image}) center/cover no-repeat`
+              } : { background: banner.background }}
             >
               <div className="relative h-full flex items-center justify-between p-8 md:p-12">
                 {/* Content */}
