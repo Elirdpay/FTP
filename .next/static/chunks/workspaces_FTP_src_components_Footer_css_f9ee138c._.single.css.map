@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/workspaces/FTP/src/components/Footer.css"],"sourcesContent":[".footer {\n  padding: 2rem 1rem;\n  background: #f8f8f8;\n  border-top: 1px solid #ddd;\n  text-align: center;\n}\n\n.footer h2 {\n  font-size: 1.25rem;\n  margin-bottom: 1.5rem;\n}\n\n.authors {\n  display: flex;\n  justify-content: center;\n  gap: 2rem;\n  flex-wrap: wrap;\n}\n\n.author {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.author img {\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n  border: 2px solid #ccc;\n  object-fit: cover;\n}\n\n.author span {\n  margin-top: 0.5rem;\n  font-size: 0.9rem;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;AAOA;;;;;AAKA;;;;;;;AAOA;;;;;;AAMA;;;;;;;;AAQA"}}]
-}
