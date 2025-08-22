@@ -2,59 +2,24 @@ import { ChevronRight } from 'lucide-react';
 
 const gameTopUps = [
   {
-    name: "PUBG Mobile UC (Global)",
+    name: "Genshin Impact",
     region: "Global",
-    imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/930-19.jpg",
-    link: "https://www.seagm.com/ru/pubg-mobile-uc-top-up-global?ps=Home-Popular-Game-Top-Up",
-  },
-  {
-    name: "Mobile Legends Diamonds",
-    region: "Global",
-    imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/758-20.jpg",
-    link: "https://www.seagm.com/ru/mobile-legends-diamonds-top-up?ps=Home-Popular-Game-Top-Up",
-  },
-  {
-    name: "Age of Empires Mobile Top Up",
-    region: "Global",
-    imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/2569-21.jpg",
-    link: "https://www.seagm.com/ru/age-of-empires-mobile-top-up?ps=Home-Popular-Game-Top-Up",
-  },
-  {
-    name: "Honor of Kings Tokens & Packages Global",
-    region: "Global",
-    imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/1515-22.jpg",
-    link: "https://www.seagm.com/ru/honor-of-kings-token-top-up?ps=Home-Popular-Game-Top-Up",
-  },
-  {
-    name: "TikTok China Diamonds (Douyin)",
-    region: "China",
-    imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/949-23.jpg",
-    link: "https://www.seagm.com/ru/tik-tok-credit-instant-top-up?ps=Home-Popular-Game-Top-Up",
-  },
-  {
-    name: "Marvel Rivals Top Up",
-    region: "Global",
-    imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/2705-24.jpg",
-    link: "https://www.seagm.com/ru/marvel-rivals-top-up?ps=Home-Popular-Game-Top-Up",
-  },
-  {
-    name: "Identity V Echoes(Global) Top up",
-    region: "Global",
-    imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/776-25.jpg",
-    link: "https://www.seagm.com/ru/identity-v-idv-global-top-up?ps=Home-Popular-Game-Top-Up",
-  },
-  {
-    name: "BIGO Live Diamonds",
-    region: "Global",
-    imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/839-26.jpg",
-    link: "https://www.seagm.com/ru/bigo-live-diamonds?ps=Home-Popular-Game-Top-Up",
+    imageUrl: "/icons/GI.png",
+    link: "https://www.seagm.com/ru/genshin-impact-top-up",
   },
   {
     name: "Honkai: Star Rail",
     region: "Global",
-    imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/1942-27.jpg",
-    link: "https://www.seagm.com/ru/honkai-star-rail-oneiric-shard-top-up?ps=Home-Popular-Game-Top-Up",
+    imageUrl: "/icons/HSR.png",
+    link: "https://www.seagm.com/ru/honkai-star-rail-oneiric-shard-top-up",
   },
+  {
+    name: "Zenless Zone Zero",
+    region: "Global",
+    imageUrl: "/icons/ZZZ.png",
+    link: "https://www.seagm.com/ru/zenless-zone-zero-top-up",
+  },
+  // ...остальные игры, если нужно, можно добавить сюда
 ];
 
 const PopularGameTopup = () => {
