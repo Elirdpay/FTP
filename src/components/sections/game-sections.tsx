@@ -35,7 +35,7 @@ const games: Game[] = [
     gradientTo: '#7B68EE',
     crystalName: 'Кристаллы сотворения',
     subscriptionName: 'Благословение полой луны',
-    logo: '🌟'
+    logo: '/icons/GI.png'
   },
   {
     id: 'hsr',
@@ -46,7 +46,7 @@ const games: Game[] = [
     gradientTo: '#E67E22',
     crystalName: 'Онериковые осколки',
     subscriptionName: 'Пропуск экспресса',
-    logo: '🚂'
+    logo: '/icons/HSR.png'
   },
   {
     id: 'zzz',
@@ -57,7 +57,7 @@ const games: Game[] = [
     gradientTo: '#C0392B',
     crystalName: 'Моноскипы',
     subscriptionName: 'Месячный пропуск',
-    logo: '⚡'
+    logo: '/icons/ZZZ.png'
   }
 ];
 
@@ -128,13 +128,12 @@ export default function GameSections() {
         <section key={game.id} id={game.id} className="space-y-8">
           <div className="flex items-center space-x-4">
             <div 
-              className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl brand-glow"
+              className="w-16 h-16 rounded-2xl flex items-center justify-center brand-glow bg-white overflow-hidden"
               style={{ 
-                background: `linear-gradient(135deg, ${game.gradientFrom}, ${game.gradientTo})`,
-                color: 'white'
+                background: `linear-gradient(135deg, ${game.gradientFrom}, ${game.gradientTo})`
               }}
             >
-              {game.logo}
+              <img src={game.logo} alt={game.name} className="w-full h-full object-cover rounded-2xl" />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-foreground">{game.name}</h2>

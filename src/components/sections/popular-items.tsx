@@ -1,4 +1,3 @@
-'use client';
 
 import { Star, TrendingUp, ShoppingCart } from 'lucide-react';
 
@@ -22,9 +21,9 @@ const popularItems: PopularItem[] = [
     price: 980,
     originalPrice: 1080,
     discount: '10%',
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/1942-27.jpg',
+    image: '/icons/GI.png',
     game: 'Genshin Impact',
-    gameIcon: '🌟',
+    gameIcon: '/icons/GI.png',
     isMostPopular: true,
     category: 'crystal'
   },
@@ -32,9 +31,9 @@ const popularItems: PopularItem[] = [
     id: '2',
     name: 'Благословение полой луны',
     price: 300,
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/1942-27.jpg',
+    image: '/icons/GI.png',
     game: 'Genshin Impact',
-    gameIcon: '🌟',
+    gameIcon: '/icons/GI.png',
     isMostPopular: true,
     category: 'subscription'
   },
@@ -43,10 +42,9 @@ const popularItems: PopularItem[] = [
     name: '980 Онериковых осколков',
     price: 980,
     originalPrice: 1080,
-    discount: '10%',
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/1942-27.jpg',
+    image: '/icons/HSR.png',
     game: 'Honkai: Star Rail',
-    gameIcon: '🚂',
+    gameIcon: '/icons/HSR.png',
     isMostPopular: true,
     category: 'crystal'
   },
@@ -54,27 +52,27 @@ const popularItems: PopularItem[] = [
     id: '4',
     name: 'Жемчужный гимн',
     price: 635,
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/1942-27.jpg',
+    image: '/icons/GI.png',
     game: 'Genshin Impact',
-    gameIcon: '🌟',
+    gameIcon: '/icons/GI.png',
     category: 'battlepass'
   },
   {
     id: '5',
     name: '980 Моноскипов',
     price: 980,
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/2705-24.jpg',
+    image: '/icons/ZZZ.png',
     game: 'Zenless Zone Zero',
-    gameIcon: '⚡',
+    gameIcon: '/icons/ZZZ.png',
     category: 'crystal'
   },
   {
     id: '6',
     name: 'Пропуск экспресса',
     price: 300,
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5342e257-e4b8-4597-b5e4-106a1f7fb6b8-seagm-com/assets/images/1942-27.jpg',
+    image: '/icons/HSR.png',
     game: 'Honkai: Star Rail',
-    gameIcon: '🚂',
+    gameIcon: '/icons/HSR.png',
     category: 'subscription'
   }
 ];
@@ -140,31 +138,10 @@ export default function PopularItems() {
 
               {/* Game Badge */}
               <div className="flex items-center gap-2">
-                <div className="text-lg">{item.gameIcon}</div>
+                <img src={item.gameIcon} alt={item.game} className="w-6 h-6 rounded" />
                 <span className="text-sm text-muted-foreground font-medium">
                   {item.game}
                 </span>
-                <div className={`text-xs px-2 py-1 rounded-full ${
-                  item.category === 'crystal'
-                    ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                    : item.category === 'subscription'
-                    ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                    : 'bg-purple-500/20 text-purple-400 border border-purple-500/30'
-                }`}>
-                  {item.category === 'crystal'
-                    ? 'Кристаллы'
-                    : item.category === 'subscription'
-                    ? 'Подписка'
-                    : 'Батл Пасс'}
-                </div>
-              </div>
-
-              {/* Product Info */}
-              <div className="space-y-2">
-                <h3 className="font-semibold text-card-foreground text-lg leading-tight group-hover:text-brand transition-colors duration-200">
-                  {item.name}
-                </h3>
-
                 {/* Price */}
                 <div className="flex items-center gap-2">
                   <span className="text-2xl font-bold text-brand">
