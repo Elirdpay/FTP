@@ -3,7 +3,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@theme {
+:root {
   /* Dark theme from Free To Pay example */
   --color-background: #05080d;
   --color-background-soft: #0a1117;
@@ -16,6 +16,8 @@
   --color-popover-foreground: #e8fefe;
 
   --color-primary: #00ffe0; /* Brand cyan */
+  /* toned down primary for less saturated buttons */
+  --color-primary: #00c8b0;
   --color-primary-foreground: #001e1e;
 
   --color-secondary: #0a1117;
@@ -49,22 +51,22 @@
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+}
 
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
+@keyframes accordion-down {
+  from {
+    height: 0;
   }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
   }
 }
 
@@ -165,13 +167,32 @@ body {
     padding: 24px;
   }
 
+  /* Form input common */
+  .input {
+    background: var(--input);
+    color: var(--foreground);
+    border: 1px solid var(--stroke);
+    padding: 10px 12px;
+    border-radius: 10px;
+    outline: none;
+  }
+
+
   .brand-glow {
-    box-shadow: 0 0 15px rgba(0,255,224,0.6), 0 0 30px rgba(0,166,166,0.4);
+    box-shadow: 0 6px 18px rgba(0,255,224,0.08), 0 8px 30px rgba(0,166,166,0.06);
   }
 
   .brand-gradient {
-    background: linear-gradient(90deg, var(--color-brand), var(--color-brand-2));
+    background: linear-gradient(90deg, #00b3a0, #00807a);
   }
+.bg-card, [class*="bg-card"] { background-color: var(--card) !important; }
+.bg-muted, [class*="bg-muted"] { background-color: var(--muted) !important; }
+.bg-background, [class*="bg-background"] { background-color: var(--background) !important; }
+
+/* tone down primary-like badges/buttons using brand colors */
+.brand-gradient { box-shadow: none; }
+.brand-glow { box-shadow: 0 6px 18px rgba(0,196,160,0.06), 0 8px 30px rgba(0,128,128,0.04); }
+.text-brand { color: var(--color-brand); opacity: 0.95 }
 
   .lead {
     color: var(--color-text-dim);
@@ -179,3 +200,41 @@ body {
     line-height: 1.6;
   }
 }
+
+/* toast styles */
+#app-toast {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  right: 20px;
+  bottom: 20px;
+  position: fixed;
+  z-index: 9999;
+}
+#app-toast > div{
+  transition: transform .24s cubic-bezier(.2,.9,.2,1), opacity .24s ease;
+  transform: translateY(8px) scale(.98);
+  opacity: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  will-change: transform, opacity;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+#app-toast > div.show{
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.brand-gradient { transition: transform .18s ease, box-shadow .18s ease; }
+.brand-gradient:hover { transform: translateY(-2px); }
+
+/* Ensure card backgrounds are solid (prevent unwanted transparency) */
+.bg-card { background: var(--card) !important; }
+.bg-muted { background: var(--muted) !important; }
+.bg-background { background: var(--background) !important; }
+
+/* Toned down badges and primary buttons */
+.badge-muted { background: rgba(255,255,255,0.04); color: var(--muted-foreground); border: 1px solid rgba(255,255,255,0.03); }
+.btn-subtle { background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.03); }

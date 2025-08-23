@@ -94,8 +94,30 @@ const getProductIcon = (type: string) => {
 export default function GameSections() {
   const [selectedTab, setSelectedTab] = useState<{[key: string]: string}>({});
 
-  const handleAddToCart = (product: Product, game: Game) => {
-    console.log(`Adding to cart: ${product.name} for ${game.name}`);
+  const handleAddToCart = async (product: Product, game: Game) => {
+    try{
+      // use helper if available
+      // dynamic import to avoid circular
+      const api = await import('@/lib/api')
+      const toast = (await import('@/lib/toast')).toast
+  const r:any = await api.addToCart(product.id, 1, product.name, product.price)
+      if (r.ok === false || (r.status && r.status >= 400)) {
+        toast('Ошибка при добавлении в корзину')
+        return
+      }
+      toast('Добавлено в корзину')
+      try{
+        const token = localStorage.getItem('access_token')
+        if (token){
+          const rc = await fetch('/api/me/cart', { headers: { Authorization: `Bearer ${token}` } })
+          if (rc.ok){ const j = await rc.json(); const cnt = Array.isArray(j)? j.reduce((s:any,i:any)=>s + (i.quantity||0),0) : 0; try{ localStorage.setItem('server_cart_count', String(cnt)) }catch(e){}; try{ window.dispatchEvent(new Event('storage')) }catch(e){} }
+        }
+      }catch(e){}
+    } catch (e) {
+      console.error(e);
+      const toast = (await import('@/lib/toast')).toast;
+      toast('Ошибка при добавлении');
+    }
   };
 
   const getTabKey = (gameId: string) => selectedTab[gameId] || 'crystals';
@@ -174,7 +196,7 @@ export default function GameSections() {
                   
                   <div className="mb-6">
                     <div className="text-3xl font-bold text-brand mb-1">
-                      {product.price.toLocaleString()} {product.currency}
+                      {new Intl.NumberFormat('ru-RU').format(product.price)} {product.currency}
                     </div>
                   </div>
 

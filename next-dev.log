@@ -1,0 +1,44 @@
+nohup: ignoring input
+
+> app@0.1.0 dev
+> next dev --turbopack
+
+ ⚠ Port 3000 is in use, using available port 3001 instead.
+   ▲ Next.js 15.3.5 (Turbopack)
+   - Local:        http://localhost:3001
+   - Network:      http://10.0.1.128:3001
+
+ ✓ Starting...
+ � ✓ Compiled in 1682ms
+ompiling / ...
+ ✓ Compiled / in 8.4s
+ GET / 200 in 8975ms
+ ✓ Compiled in 1511ms
+ ○ Compiling /api/auth/login ...
+ ✓ Compiled /api/auth/login in 1103ms
+ POST /api/auth/login 200 in 1401ms
+ ○ Compiling /api/me/profile ...
+ ✓ Compiled /api/me/profile in 701ms
+ GET /api/me/profile 401 in 836ms
+ POST /api/auth/login 200 in 52ms
+ GET /api/me/profile 200 in 52ms
+ GET /api/me/profile 200 in 40ms
+ POST /api/auth/login 200 in 52ms
+ GET /api/me/profile 200 in 25ms
+ POST /api/auth/login 200 in 128ms
+ ○ Compiling /api/me/cart/add ...
+ ✓ Compiled /api/me/cart/add in 705ms
+ POST /api/me/cart/add 200 in 741ms
+ ○ Compiling /api/me/cart ...
+ ✓ Compiled /api/me/cart in 653ms
+ GET /api/me/cart 200 in 682ms
+ POST /api/auth/login 200 in 78ms
+ ○ Compiling /api/me/checkout ...
+ ✓ Compiled /api/me/checkout in 752ms
+ POST /api/me/checkout 400 in 791ms
+ POST /api/me/checkout 400 in 26ms
+ POST /api/me/checkout 400 in 38ms
+ GET /api/me/cart 200 in 34ms
+ POST /api/me/checkout 200 in 47ms
+ POST /api/auth/login 200 in 28ms
+ GET /api/me/profile 200 in 39ms
