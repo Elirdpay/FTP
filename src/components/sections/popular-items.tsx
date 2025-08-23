@@ -168,18 +168,25 @@ export default function PopularItems() {
                 {/* Price */}
                 <div className="flex items-center gap-2">
                   <span className="text-2xl font-bold text-brand">
-                    {item.price.toLocaleString()} ₽
+                    {new Intl.NumberFormat('ru-RU').format(item.price)} ₽
                   </span>
                   {item.originalPrice && (
                     <span className="text-sm text-muted-foreground line-through">
-                      {item.originalPrice.toLocaleString()} ₽
+                      {new Intl.NumberFormat('ru-RU').format(item.originalPrice)} ₽
                     </span>
                   )}
                 </div>
               </div>
 
               {/* Purchase Button */}
-              <button className="w-full brand-gradient text-primary-foreground font-bold py-3 px-6 rounded-xl brand-glow hover:scale-105 transition-transform flex items-center justify-center gap-2">
+              <button onClick={async ()=>{
+                const api = await import('@/lib/api')
+                const r:any = await api.addToCart(item.id, 1, item.name, item.price)
+                const toast = (await import('@/lib/toast')).toast
+                if (r.ok === false || (r.status && r.status >= 400)) {
+                  toast('Ошибка')
+                } else toast('Добавлено в корзину')
+              }} className="w-full brand-gradient text-primary-foreground font-bold py-3 px-6 rounded-xl brand-glow hover:scale-105 transition-transform flex items-center justify-center gap-2">
                 <ShoppingCart className="w-4 h-4" />
                 В корзину
               </button>

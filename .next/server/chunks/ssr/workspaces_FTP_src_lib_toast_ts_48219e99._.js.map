@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///workspaces/FTP/src/lib/toast.ts"],"sourcesContent":["export function toast(msg: string){\n  if (typeof window === 'undefined') return\n  const id = 'app-toast'\n  let el = document.getElementById(id)\n  if (!el){\n    el = document.createElement('div')\n    el.id = id\n    el.style.position = 'fixed'\n    el.style.right = '20px'\n    el.style.bottom = '20px'\n    el.style.zIndex = '9999'\n    document.body.appendChild(el)\n  }\n  const t = document.createElement('div')\n  t.textContent = msg\n  el.appendChild(t)\n  // trigger CSS animation\n  setTimeout(()=> t.classList.add('show'), 10)\n  // remove after timeout with fade\n  setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.remove(), 300) }, 3000)\n}\n"],"names":[],"mappings":";;;AAAO,SAAS,MAAM,GAAW;IAC/B,wCAAmC;;IACnC,MAAM;IACN,IAAI;IAUJ,MAAM;AAOR","debugId":null}}]
+}

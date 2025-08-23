@@ -669,6 +669,7 @@ var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_
 __turbopack_context__.s({
     "default": (()=>PopularItems)
 });
+var __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/workspaces/FTP/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/workspaces/FTP/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__ = __turbopack_context__.i("[project]/workspaces/FTP/node_modules/lucide-react/dist/esm/icons/star.js [app-client] (ecmascript) <export default as Star>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__ = __turbopack_context__.i("[project]/workspaces/FTP/node_modules/lucide-react/dist/esm/icons/trending-up.js [app-client] (ecmascript) <export default as TrendingUp>");
@@ -1013,15 +1014,35 @@ function PopularItems() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         "data-orchids-id": "src/components/sections/popular-items.tsx:182:14@popularItems",
                                         "data-orchids-name": "button",
+                                        onClick: async ()=>{
+                                            const token = localStorage.getItem('access_token');
+                                            if (!token) return window.location.href = '/login';
+                                            const base = __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000';
+                                            const res = await fetch(base + '/me/cart/add', {
+                                                method: 'POST',
+                                                headers: {
+                                                    'Content-Type': 'application/json',
+                                                    Authorization: `Bearer ${token}`
+                                                },
+                                                body: JSON.stringify({
+                                                    product_id: item.id,
+                                                    quantity: 1
+                                                })
+                                            });
+                                            if (!res.ok) {
+                                                const j = await res.json().catch(()=>({}));
+                                                alert(j.detail || 'Ошибка');
+                                            } else alert('Добавлено в корзину');
+                                        },
                                         className: "w-full brand-gradient text-primary-foreground font-bold py-3 px-6 rounded-xl brand-glow hover:scale-105 transition-transform flex items-center justify-center gap-2",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__["ShoppingCart"], {
-                                                "data-orchids-id": "src/components/sections/popular-items.tsx:183:16@popularItems",
+                                                "data-orchids-id": "src/components/sections/popular-items.tsx:192:16@popularItems",
                                                 "data-orchids-name": "ShoppingCart",
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/workspaces/FTP/src/components/sections/popular-items.tsx",
-                                                lineNumber: 183,
+                                                lineNumber: 192,
                                                 columnNumber: 17
                                             }, this),
                                             "В корзину"
@@ -1070,6 +1091,7 @@ var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_
 __turbopack_context__.s({
     "default": (()=>GameSections)
 });
+var __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/workspaces/FTP/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/workspaces/FTP/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/workspaces/FTP/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__ = __turbopack_context__.i("[project]/workspaces/FTP/node_modules/lucide-react/dist/esm/icons/shopping-cart.js [app-client] (ecmascript) <export default as ShoppingCart>");
@@ -1240,27 +1262,54 @@ const getProductIcon = (type)=>{
 function GameSections() {
     _s();
     const [selectedTab, setSelectedTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
-    const handleAddToCart = (product, game)=>{
-        console.log(`Adding to cart: ${product.name} for ${game.name}`);
+    const handleAddToCart = async (product, game)=>{
+        try {
+            const token = localStorage.getItem('access_token');
+            if (!token) {
+                window.location.href = '/login';
+                return;
+            }
+            const base = __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000';
+            const res = await fetch(base + '/me/cart/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    product_id: product.id,
+                    quantity: 1
+                })
+            });
+            if (!res.ok) {
+                const j = await res.json().catch(()=>({}));
+                alert(j.detail || 'Ошибка при добавлении в корзину');
+                return;
+            }
+            alert('Добавлено в корзину');
+        } catch (err) {
+            console.error(err);
+            alert('Ошибка');
+        }
     };
     const getTabKey = (gameId)=>selectedTab[gameId] || 'crystals';
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        "data-orchids-id": "src/components/sections/game-sections.tsx:104:4",
+        "data-orchids-id": "src/components/sections/game-sections.tsx:121:4",
         "data-orchids-name": "div",
         className: "container space-y-16",
         children: games.map((game)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                "data-orchids-id": "src/components/sections/game-sections.tsx:106:8@games",
+                "data-orchids-id": "src/components/sections/game-sections.tsx:123:8@games",
                 "data-orchids-name": "section",
                 id: game.id,
                 className: "space-y-8",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        "data-orchids-id": "src/components/sections/game-sections.tsx:107:10@games",
+                        "data-orchids-id": "src/components/sections/game-sections.tsx:124:10@games",
                         "data-orchids-name": "div",
                         className: "flex items-center space-x-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                "data-orchids-id": "src/components/sections/game-sections.tsx:108:12@games",
+                                "data-orchids-id": "src/components/sections/game-sections.tsx:125:12@games",
                                 "data-orchids-name": "div",
                                 className: "w-16 h-16 rounded-2xl flex items-center justify-center text-3xl brand-glow",
                                 style: {
@@ -1270,47 +1319,47 @@ function GameSections() {
                                 children: game.logo
                             }, void 0, false, {
                                 fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                lineNumber: 108,
+                                lineNumber: 125,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                "data-orchids-id": "src/components/sections/game-sections.tsx:117:12@games",
+                                "data-orchids-id": "src/components/sections/game-sections.tsx:134:12@games",
                                 "data-orchids-name": "div",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        "data-orchids-id": "src/components/sections/game-sections.tsx:118:14@games",
+                                        "data-orchids-id": "src/components/sections/game-sections.tsx:135:14@games",
                                         "data-orchids-name": "h2",
                                         className: "text-3xl font-bold text-foreground",
                                         children: game.name
                                     }, void 0, false, {
                                         fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 135,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        "data-orchids-id": "src/components/sections/game-sections.tsx:119:14@games",
+                                        "data-orchids-id": "src/components/sections/game-sections.tsx:136:14@games",
                                         "data-orchids-name": "p",
                                         className: "text-muted-foreground",
                                         children: "Каталог донатов"
                                     }, void 0, false, {
                                         fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 136,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                lineNumber: 117,
+                                lineNumber: 134,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                        lineNumber: 107,
+                        lineNumber: 124,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        "data-orchids-id": "src/components/sections/game-sections.tsx:124:10@games",
+                        "data-orchids-id": "src/components/sections/game-sections.tsx:141:10@games",
                         "data-orchids-name": "div",
                         className: "flex gap-3 flex-wrap",
                         children: [
@@ -1318,12 +1367,12 @@ function GameSections() {
                                 key: 'crystals',
                                 label: 'Кристаллы',
                                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$coins$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Coins$3e$__["Coins"], {
-                                    "data-orchids-id": "src/components/sections/game-sections.tsx:126:59",
+                                    "data-orchids-id": "src/components/sections/game-sections.tsx:143:59",
                                     "data-orchids-name": "Coins",
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                    lineNumber: 126,
+                                    lineNumber: 143,
                                     columnNumber: 60
                                 }, this)
                             },
@@ -1331,12 +1380,12 @@ function GameSections() {
                                 key: 'subscriptions',
                                 label: 'Подписки',
                                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__["Calendar"], {
-                                    "data-orchids-id": "src/components/sections/game-sections.tsx:127:63",
+                                    "data-orchids-id": "src/components/sections/game-sections.tsx:144:63",
                                     "data-orchids-name": "Calendar",
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 144,
                                     columnNumber: 64
                                 }, this)
                             },
@@ -1344,17 +1393,17 @@ function GameSections() {
                                 key: 'battlepass',
                                 label: 'Боевой пропуск',
                                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"], {
-                                    "data-orchids-id": "src/components/sections/game-sections.tsx:128:66",
+                                    "data-orchids-id": "src/components/sections/game-sections.tsx:145:66",
                                     "data-orchids-name": "Award",
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                    lineNumber: 128,
+                                    lineNumber: 145,
                                     columnNumber: 67
                                 }, this)
                             }
                         ].map((tab)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                "data-orchids-id": "src/components/sections/game-sections.tsx:130:14@games",
+                                "data-orchids-id": "src/components/sections/game-sections.tsx:147:14@games",
                                 "data-orchids-name": "button",
                                 onClick: ()=>setSelectedTab((prev)=>({
                                             ...prev,
@@ -1367,16 +1416,16 @@ function GameSections() {
                                 ]
                             }, tab.key, true, {
                                 fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                lineNumber: 130,
+                                lineNumber: 147,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                        lineNumber: 124,
+                        lineNumber: 141,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        "data-orchids-id": "src/components/sections/game-sections.tsx:146:10@games",
+                        "data-orchids-id": "src/components/sections/game-sections.tsx:163:10@games",
                         "data-orchids-name": "div",
                         className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
                         children: generateProducts(game).filter((p)=>{
@@ -1386,17 +1435,17 @@ function GameSections() {
                             if (activeTab === 'battlepass') return p.type === 'battlepass';
                             return true;
                         }).map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                "data-orchids-id": "src/components/sections/game-sections.tsx:156:16@games",
+                                "data-orchids-id": "src/components/sections/game-sections.tsx:173:16@games",
                                 "data-orchids-name": "div",
                                 className: "bg-card border border-stroke rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        "data-orchids-id": "src/components/sections/game-sections.tsx:160:18@games",
+                                        "data-orchids-id": "src/components/sections/game-sections.tsx:177:18@games",
                                         "data-orchids-name": "div",
                                         className: "flex items-center gap-4 mb-4",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                "data-orchids-id": "src/components/sections/game-sections.tsx:161:20",
+                                                "data-orchids-id": "src/components/sections/game-sections.tsx:178:20",
                                                 "data-orchids-name": "div",
                                                 className: "w-20 h-20 rounded-2xl flex items-center justify-center text-xl",
                                                 style: {
@@ -1406,52 +1455,52 @@ function GameSections() {
                                                 children: getProductIcon(product.type)
                                             }, void 0, false, {
                                                 fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                                lineNumber: 161,
+                                                lineNumber: 178,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                "data-orchids-id": "src/components/sections/game-sections.tsx:170:20",
+                                                "data-orchids-id": "src/components/sections/game-sections.tsx:187:20",
                                                 "data-orchids-name": "div",
                                                 className: "flex-1",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                        "data-orchids-id": "src/components/sections/game-sections.tsx:171:22",
+                                                        "data-orchids-id": "src/components/sections/game-sections.tsx:188:22",
                                                         "data-orchids-name": "h3",
                                                         className: "font-semibold text-card-foreground text-lg mb-1",
                                                         children: product.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                                        lineNumber: 171,
+                                                        lineNumber: 188,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        "data-orchids-id": "src/components/sections/game-sections.tsx:172:22",
+                                                        "data-orchids-id": "src/components/sections/game-sections.tsx:189:22",
                                                         "data-orchids-name": "p",
                                                         className: "text-sm text-muted-foreground",
                                                         children: game.shortName
                                                     }, void 0, false, {
                                                         fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                                        lineNumber: 172,
+                                                        lineNumber: 189,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                                lineNumber: 170,
+                                                lineNumber: 187,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                        lineNumber: 160,
+                                        lineNumber: 177,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        "data-orchids-id": "src/components/sections/game-sections.tsx:176:18@games",
+                                        "data-orchids-id": "src/components/sections/game-sections.tsx:193:18@games",
                                         "data-orchids-name": "div",
                                         className: "mb-6",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            "data-orchids-id": "src/components/sections/game-sections.tsx:177:20",
+                                            "data-orchids-id": "src/components/sections/game-sections.tsx:194:20",
                                             "data-orchids-name": "div",
                                             className: "text-3xl font-bold text-brand mb-1",
                                             children: [
@@ -1461,56 +1510,56 @@ function GameSections() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                            lineNumber: 177,
+                                            lineNumber: 194,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                        lineNumber: 176,
+                                        lineNumber: 193,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        "data-orchids-id": "src/components/sections/game-sections.tsx:182:18@games",
+                                        "data-orchids-id": "src/components/sections/game-sections.tsx:199:18@games",
                                         "data-orchids-name": "button",
                                         onClick: ()=>handleAddToCart(product, game),
                                         className: "w-full brand-gradient text-primary-foreground font-bold py-3 px-6 rounded-xl brand-glow hover:scale-105 transition-transform flex items-center justify-center gap-2",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$workspaces$2f$FTP$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__["ShoppingCart"], {
-                                                "data-orchids-id": "src/components/sections/game-sections.tsx:186:20",
+                                                "data-orchids-id": "src/components/sections/game-sections.tsx:203:20",
                                                 "data-orchids-name": "ShoppingCart",
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                                lineNumber: 186,
+                                                lineNumber: 203,
                                                 columnNumber: 21
                                             }, this),
                                             "В корзину"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                        lineNumber: 182,
+                                        lineNumber: 199,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, product.id, true, {
                                 fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                                lineNumber: 156,
+                                lineNumber: 173,
                                 columnNumber: 17
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                        lineNumber: 146,
+                        lineNumber: 163,
                         columnNumber: 11
                     }, this)
                 ]
             }, game.id, true, {
                 fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-                lineNumber: 106,
+                lineNumber: 123,
                 columnNumber: 9
             }, this))
     }, void 0, false, {
         fileName: "[project]/workspaces/FTP/src/components/sections/game-sections.tsx",
-        lineNumber: 104,
+        lineNumber: 121,
         columnNumber: 5
     }, this);
 }
