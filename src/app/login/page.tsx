@@ -20,11 +20,20 @@ export default function LoginPage(){
     if (!password){ setError('Введите пароль'); return }
     setLoading(true)
     try{
-      const data = new FormData()
-      data.append('username', email)
-      data.append('password', password)
       let res
-  try{ res = await fetch('/api/auth/login', { method: 'POST', body: data }) }catch(e){ console.error('fetch /token failed', e); setError('Сетевая ошибка: не удалось связаться с сервером'); toast('Сеть: не удалось связаться с сервером'); setLoading(false); return }
+      try {
+        res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        })
+      } catch(e) {
+        console.error('fetch /api/auth/login failed', e);
+        setError('Сетевая ошибка: не удалось связаться с сервером');
+        toast('Сеть: не удалось связаться с сервером');
+        setLoading(false);
+        return;
+      }
       if (!res.ok){
         setError('Неверные учётные данные')
         toast('Неверные учётные данные')
@@ -33,6 +42,24 @@ export default function LoginPage(){
       }
       const json = await res.json()
       localStorage.setItem('access_token', json.access_token)
+      // Миграция guest_cart в серверную корзину
+      try {
+        const guestCartRaw = localStorage.getItem('guest_cart') || '[]';
+        const guestCart = JSON.parse(guestCartRaw);
+        if (Array.isArray(guestCart) && guestCart.length > 0) {
+          for (const item of guestCart) {
+            await fetch('/api/me/cart/add', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${json.access_token}`
+              },
+              body: JSON.stringify({ product_id: String(item.product_id), quantity: item.quantity || 1 })
+            });
+          }
+          localStorage.removeItem('guest_cart');
+        }
+      } catch (e) { console.error('Ошибка миграции guest_cart', e); }
       toast('Вход выполнен')
       router.push('/')
     }catch(e:any){

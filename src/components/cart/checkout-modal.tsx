@@ -8,6 +8,15 @@ export default function CheckoutModal({ open, onClose, subtotal, singleItem }: {
   const [loading, setLoading] = useState(false)
   const [confirming, setConfirming] = useState(false)
   const [success, setSuccess] = useState(false)
+  // Сброс успеха при каждом новом открытии окна
+  useEffect(() => { if (open) setSuccess(false); }, [open]);
+  // Для обновления корзины после оплаты
+  useEffect(() => {
+    if (success) {
+      // Сообщаем всем слушателям (включая CartPage) что корзина изменилась
+      try { window.dispatchEvent(new Event('storage')) } catch(e){}
+    }
+  }, [success]);
   useEffect(()=>{
     async function load(){
       const token = localStorage.getItem('access_token')
@@ -48,16 +57,11 @@ export default function CheckoutModal({ open, onClose, subtotal, singleItem }: {
         const rc = await fetch('/api/me/cart', { headers: { Authorization: `Bearer ${token}` } })
         if (rc.ok){ const cj = await rc.json(); const cnt = Array.isArray(cj)? cj.reduce((s:any,i:any)=>s + (i.quantity||0),0) : 0; try{ localStorage.setItem('server_cart_count', String(cnt)) }catch(e){}; try{ window.dispatchEvent(new Event('storage')) }catch(e){} }
       }catch(e){}
-      if (singleItem){
-        // show success panel with choices
-        setSuccess(true)
-        setConfirming(false)
-        setLoading(false)
-        return
-      }
-      // full-cart flow: close and redirect to account
-      onClose()
-      location.href = '/account'
+  // Показываем окно успеха для любого случая (и для одиночного, и для всей корзины)
+  setSuccess(true)
+  setConfirming(false)
+  setLoading(false)
+  return
     }catch(e){ console.error('fetch /me/checkout failed', e); toast('Сеть: не удалось выполнить оплату') }finally{ setLoading(false); setConfirming(false) }
   }
 
@@ -87,8 +91,7 @@ export default function CheckoutModal({ open, onClose, subtotal, singleItem }: {
             <h3 className="text-3xl font-bold mb-4">Успех!</h3>
             <p className="text-sm text-muted-foreground mb-6">Покупка успешно оформлена. Перейдите в личный кабинет для активации покупок.</p>
             <div className="flex flex-col gap-3 max-w-sm mx-auto">
-              <Button onClick={()=>{ try{ location.href='/account' }catch(e){} }} className="w-full brand-gradient brand-glow">Перейти в личный кабинет</Button>
-              <Button variant="outline" onClick={()=>{ try{ localStorage.setItem('server_cart_count','0'); window.dispatchEvent(new Event('storage')) }catch(e){}; setSuccess(false); onClose(); }} className="w-full">Остаться в корзине</Button>
+              <Button onClick={()=>{ try{ location.href='/' }catch(e){} }} className="w-full brand-gradient brand-glow">На главную</Button>
             </div>
           </div>
         ) : (

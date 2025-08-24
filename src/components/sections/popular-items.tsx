@@ -1,8 +1,8 @@
-
+"use client";
 import { Star, TrendingUp, ShoppingCart } from 'lucide-react';
 
 interface PopularItem {
-  id: string;
+  id: number;
   name: string;
   price: number;
   originalPrice?: number;
@@ -16,7 +16,7 @@ interface PopularItem {
 
 const popularItems: PopularItem[] = [
   {
-    id: '1',
+    id: 13,
     name: '980 Кристаллов сотворения',
     price: 980,
     originalPrice: 1080,
@@ -28,7 +28,7 @@ const popularItems: PopularItem[] = [
     category: 'crystal'
   },
   {
-    id: '2',
+    id: 16,
     name: 'Благословение полой луны',
     price: 300,
     image: '/icons/GI.png',
@@ -38,8 +38,8 @@ const popularItems: PopularItem[] = [
     category: 'subscription'
   },
   {
-    id: '3',
-    name: '980 Онериковых осколков',
+    id: 23,
+    name: '980 Сущности древних снов',
     price: 980,
     originalPrice: 1080,
     image: '/icons/HSR.png',
@@ -49,7 +49,7 @@ const popularItems: PopularItem[] = [
     category: 'crystal'
   },
   {
-    id: '4',
+    id: 17,
     name: 'Жемчужный гимн',
     price: 635,
     image: '/icons/GI.png',
@@ -58,8 +58,8 @@ const popularItems: PopularItem[] = [
     category: 'battlepass'
   },
   {
-    id: '5',
-    name: '980 Моноскипов',
+    id: 33,
+    name: '980 Монохромов',
     price: 980,
     image: '/icons/ZZZ.png',
     game: 'Zenless Zone Zero',
@@ -67,8 +67,8 @@ const popularItems: PopularItem[] = [
     category: 'crystal'
   },
   {
-    id: '6',
-    name: 'Пропуск экспресса',
+    id: 26,
+    name: 'Пропуск снабжения экспресса',
     price: 300,
     image: '/icons/HSR.png',
     game: 'Honkai: Star Rail',

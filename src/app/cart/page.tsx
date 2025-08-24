@@ -12,63 +12,63 @@ export default function CartPage(){
   const [show, setShow] = useState(false)
   const [singleItem, setSingleItem] = useState<any|null>(null)
 
-  const load = async ()=>{
-    const token = localStorage.getItem('access_token')
-    let data = []
-  if (token) data = await getJson('/me/cart', token)
-    else {
-      try{ data = JSON.parse(localStorage.getItem('guest_cart')||'[]') }catch(e){ data = [] }
-      // guest_cart may contain snapshot { product_id, quantity, name, price }
-  const base = ''
-      // try to resolve missing name/price via server
-      data = await Promise.all(data.map(async (it:any)=>{
-        const out = { product_id: it.product_id, name: it.name || it.product_id, price: it.price || 0, quantity: it.quantity }
-        if (!out.price || out.price === 0){
-          // try resolve by product_id
-            try{
-            let resp = await fetch(`/api/products/resolve?name=${encodeURIComponent(it.product_id)}`)
-            if (resp.ok){ const pj = await resp.json(); out.name = pj.name || out.name; out.price = pj.price || out.price }
-            // fallback: try using stored name
-            if ((!out.price || out.price === 0) && it.name){
-              resp = await fetch(`/api/products/resolve?name=${encodeURIComponent(it.name)}`)
-              if (resp.ok){ const pj = await resp.json(); out.name = pj.name || out.name; out.price = pj.price || out.price }
-            }
-            // fallback: replace underscores with dashes and try last token
-            if ((!out.price || out.price === 0) && typeof it.product_id === 'string'){
-              const alt = it.product_id.replace(/_/g, '-')
-              resp = await fetch(`/api/products/resolve?name=${encodeURIComponent(alt)}`)
-              if (resp.ok){ const pj = await resp.json(); out.name = pj.name || out.name; out.price = pj.price || out.price }
-              if ((!out.price || out.price === 0)){
-                const parts = it.product_id.split('-')
-                if (parts.length) {
-                  const last = parts[parts.length-1]
-                  resp = await fetch(`/api/products/resolve?name=${encodeURIComponent(last)}`)
-                  if (resp.ok){ const pj = await resp.json(); out.name = pj.name || out.name; out.price = pj.price || out.price }
-                }
-              }
-            }
-          }catch(e){}
-        }
-        // debug
-        try{ console.debug('cart item resolved', out) }catch(e){}
-        return out
-      }))
+  const load = async () => {
+    const token = localStorage.getItem('access_token');
+    let data: any[] = [];
+    if (token) {
+      data = await getJson('/me/cart', token);
+      // Для авторизованных: резолвим названия и цены через /api/products/resolve
+      data = (await Promise.all(data.map(async (it: any) => {
+        let name = it.name || '';
+        let price = it.price || 0;
+        try {
+          const resp = await fetch(`/api/products/resolve?name=${encodeURIComponent(it.product_id)}`);
+          if (resp.ok) {
+            const pj = await resp.json();
+            name = pj.name || name;
+            price = pj.price || price;
+          } else {
+            return null; // если товара нет в базе — не показываем
+          }
+        } catch (e) { return null; }
+        if (!name) name = String(it.product_id);
+        return { ...it, name, price };
+      }))).filter(Boolean);
+    } else {
+      try { data = JSON.parse(localStorage.getItem('guest_cart') || '[]'); } catch (e) { data = []; }
+      // Для гостей: резолвим названия и цены аналогично
+      data = (await Promise.all(data.map(async (it: any) => {
+        let name = it.name || '';
+        let price = it.price || 0;
+        try {
+          const resp = await fetch(`/api/products/resolve?name=${encodeURIComponent(it.product_id)}`);
+          if (resp.ok) {
+            const pj = await resp.json();
+            name = pj.name || name;
+            price = pj.price || price;
+          } else {
+            return null;
+          }
+        } catch (e) { return null; }
+        if (!name) name = String(it.product_id);
+        return { ...it, name, price };
+      }))).filter(Boolean);
     }
-    setItems(data)
+    setItems(data);
     // notify header / global listeners about updated cart count
-    try{
-      const count = Array.isArray(data) ? data.reduce((s:any,i:any)=>s + (i.quantity||0), 0) : 0
-  try{ localStorage.setItem('server_cart_count', String(count)) }catch(e){}
-  try{ window.dispatchEvent(new Event('storage')) }catch(e){}
-    }catch(e){}
+    try {
+      const count = Array.isArray(data) ? data.reduce((s: any, i: any) => s + (i.quantity || 0), 0) : 0;
+  try { localStorage.setItem('server_cart_count', String(count)); } catch (e) { }
+    } catch (e) { }
   }
 
   useEffect(()=>{ load() }, [])
-  useEffect(()=>{
-    const onStorage = (_e:any)=>{ load() }
-    window.addEventListener('storage', onStorage)
-    return ()=> window.removeEventListener('storage', onStorage)
-  }, [])
+  // Подписка на обновление корзины при изменениях (например, после оплаты)
+  useEffect(() => {
+    const handler = () => load();
+    window.addEventListener('storage', handler);
+    return () => window.removeEventListener('storage', handler);
+  }, []);
 
   async function changeQty(pid:any, delta:number){
     // for guest cart
@@ -78,7 +78,7 @@ export default function CartPage(){
       let arr = []
       try{ arr = JSON.parse(raw) }catch(e){ arr = [] }
       const it = arr.find((x:any)=>x.product_id==pid)
-      if (it){ it.quantity = Math.max(1, (it.quantity||1)+delta); localStorage.setItem('guest_cart', JSON.stringify(arr)); window.dispatchEvent(new Event('storage')); load() }
+  if (it){ it.quantity = Math.max(1, (it.quantity||1)+delta); localStorage.setItem('guest_cart', JSON.stringify(arr)); load() }
       return
     }
   // call API to update quantity
@@ -100,7 +100,7 @@ export default function CartPage(){
   else toast('Количество обновлено')
   // refresh and notify
   await load()
-  try{ const cnt = (await (await fetch(`/api/me/cart`, { headers: { Authorization: `Bearer ${token}` } })).json()).reduce((s:any,i:any)=>s + (i.quantity||0),0); localStorage.setItem('server_cart_count', String(cnt)); window.dispatchEvent(new Event('storage')) }catch(e){}
+  try{ const cnt = (await (await fetch(`/api/me/cart`, { headers: { Authorization: `Bearer ${token}` } })).json()).reduce((s:any,i:any)=>s + (i.quantity||0),0); localStorage.setItem('server_cart_count', String(cnt)); }catch(e){}
   }
 
   async function removeItem(pid:any){
@@ -109,15 +109,14 @@ export default function CartPage(){
       const raw = localStorage.getItem('guest_cart')||'[]'
       let arr = []
       try{ arr = JSON.parse(raw) }catch(e){ arr = [] }
-      arr = arr.filter((x:any)=>x.product_id!=pid)
-      localStorage.setItem('guest_cart', JSON.stringify(arr))
-      window.dispatchEvent(new Event('storage'))
-      load()
+  arr = arr.filter((x:any)=>x.product_id!=pid)
+  localStorage.setItem('guest_cart', JSON.stringify(arr))
+  load()
       return
     }
   try{ await fetch(`/api/me/cart/remove?product_id=${encodeURIComponent(pid)}`, { method: 'POST', headers: { Authorization: `Bearer ${token}` } }) }catch(e){ console.error('fetch /me/cart/remove failed', e); toast('Сеть: не удалось удалить товар'); }
     await load()
-    try{ const cnt = (await (await fetch(`/api/me/cart`, { headers: { Authorization: `Bearer ${token}` } })).json()).reduce((s:any,i:any)=>s + (i.quantity||0),0); localStorage.setItem('server_cart_count', String(cnt)); window.dispatchEvent(new Event('storage')) }catch(e){}
+  try{ const cnt = (await (await fetch(`/api/me/cart`, { headers: { Authorization: `Bearer ${token}` } })).json()).reduce((s:any,i:any)=>s + (i.quantity||0),0); localStorage.setItem('server_cart_count', String(cnt)); }catch(e){}
   }
 
   const subtotal = items.reduce((s:any,it:any)=>s + ((it.price||0) * (it.quantity||1)), 0)
@@ -186,7 +185,24 @@ export default function CartPage(){
           <div className="text-sm text-muted-foreground mt-2">Баланс будет списан при подтверждении заказа</div>
             <div className="mt-6 flex flex-col gap-3">
             <Button onClick={() => setShow(true)} className="w-full">Перейти к оплате</Button>
-            <Button variant={"default"} onClick={() => { localStorage.removeItem('guest_cart'); window.dispatchEvent(new Event('storage')); load() }} className="w-full">Очистить корзину</Button>
+            <Button variant={"default"} onClick={async () => {
+              const token = localStorage.getItem('access_token');
+              if (!token) {
+                localStorage.removeItem('guest_cart');
+                load();
+                return;
+              }
+              const resp = await fetch('/api/me/cart/clear', {
+                method: 'POST',
+                headers: { Authorization: `Bearer ${token}` }
+              });
+              if (resp.ok) {
+                await load();
+              } else {
+                const j = await resp.json().catch(()=>({}));
+                toast(j.detail || 'Ошибка очистки корзины');
+              }
+            }} className="w-full">Очистить корзину</Button>
           </div>
         </aside>
       </div>

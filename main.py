@@ -1,3 +1,5 @@
+from fastapi import Depends
+
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
@@ -32,6 +34,9 @@ def get_db():
     conn = sqlite3.connect(DATABASE)
     conn.row_factory = sqlite3.Row
     return conn
+
+# Endpoint для полной очистки корзины
+from fastapi import Depends
 
 def run_migrations():
     conn = sqlite3.connect(DATABASE)
@@ -154,6 +159,57 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
         raise HTTPException(status_code=404, detail="User not found")
     return dict(user)
 
+# Корректный endpoint очистки корзины
+@app.post("/me/cart/clear")
+def clear_cart(current_user: dict = Depends(get_current_user)):
+    user_id = current_user["id"]
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("SELECT id FROM carts WHERE user_id = ? ORDER BY id DESC LIMIT 1", (user_id,))
+    cart = cur.fetchone()
+    if not cart:
+        conn.close()
+        return {"msg": "Корзина уже пуста"}
+    cart_id = cart["id"]
+    cur.execute("DELETE FROM cart_items WHERE cart_id = ?", (cart_id,))
+    conn.commit()
+    conn.close()
+    return {"msg": "Корзина очищена"}
+
+@app.post("/me/cart/clear")
+def clear_cart(current_user: dict = Depends(get_current_user)):
+    user_id = current_user["id"]
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("SELECT id FROM carts WHERE user_id = ? ORDER BY id DESC LIMIT 1", (user_id,))
+    cart = cur.fetchone()
+    if not cart:
+        conn.close()
+        return {"msg": "Корзина уже пуста"}
+    cart_id = cart["id"]
+    cur.execute("DELETE FROM cart_items WHERE cart_id = ?", (cart_id,))
+    conn.commit()
+    conn.close()
+    return {"msg": "Корзина очищена"}
+
+# Endpoint для полной очистки корзины
+from fastapi import Depends
+@app.post("/me/cart/clear")
+def clear_cart(current_user: dict = Depends(get_current_user)):
+    user_id = current_user["id"]
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("SELECT id FROM carts WHERE user_id = ? ORDER BY id DESC LIMIT 1", (user_id,))
+    cart = cur.fetchone()
+    if not cart:
+        conn.close()
+        return {"msg": "Корзина уже пуста"}
+    cart_id = cart["id"]
+    cur.execute("DELETE FROM cart_items WHERE cart_id = ?", (cart_id,))
+    conn.commit()
+    conn.close()
+    return {"msg": "Корзина очищена"}
+
 @app.get("/me/profile")
 def profile(current_user: dict = Depends(get_current_user)):
     # Возвращает профиль: email, balance, текущая корзина id
@@ -212,6 +268,7 @@ def add_to_cart(item: CartAdd, current_user: dict = Depends(get_current_user)):
     if not prod_id:
         conn.close()
         raise HTTPException(status_code=400, detail="Product not found")
+    # Найти или создать корзину
     cur.execute("SELECT id FROM carts WHERE user_id = ? ORDER BY id DESC LIMIT 1", (user_id,))
     cart = cur.fetchone()
     if not cart:
@@ -219,7 +276,7 @@ def add_to_cart(item: CartAdd, current_user: dict = Depends(get_current_user)):
         cart_id = cur.lastrowid
     else:
         cart_id = cart["id"]
-    # Если товар уже в корзине, увеличить кол-во
+    # Если товар уже есть — увеличить количество, иначе добавить
     cur.execute("SELECT id, quantity FROM cart_items WHERE cart_id = ? AND product_id = ?", (cart_id, prod_id))
     existing = cur.fetchone()
     if existing:

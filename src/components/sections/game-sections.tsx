@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ShoppingCart, Coins, Calendar, Award } from 'lucide-react';
 
 interface Product {
-  id: string;
+  id: number;
   name: string;
   amount: number;
   price: number;
@@ -55,28 +55,55 @@ const games: Game[] = [
     brandColor: '#E74C3C',
     gradientFrom: '#E74C3C',
     gradientTo: '#C0392B',
-    crystalName: 'Моноскипы',
+  crystalName: 'Монохромы',
     subscriptionName: 'Месячный пропуск',
     logo: '/icons/ZZZ.png'
   }
 ];
 
-const generateProducts = (game: Game): Product[] => [
-  // Crystals
-  { id: `${game.id}-crystal-6480`, name: `6480 ${game.crystalName}`, amount: 6480, price: 6400, currency: '₽', type: 'crystal' },
-  { id: `${game.id}-crystal-3280`, name: `3280 ${game.crystalName}`, amount: 3280, price: 3280, currency: '₽', type: 'crystal' },
-  { id: `${game.id}-crystal-1980`, name: `1980 ${game.crystalName}`, amount: 1980, price: 1980, currency: '₽', type: 'crystal' },
-  { id: `${game.id}-crystal-980`, name: `980 ${game.crystalName}`, amount: 980, price: 980, currency: '₽', type: 'crystal' },
-  { id: `${game.id}-crystal-300`, name: `300 ${game.crystalName}`, amount: 300, price: 300, currency: '₽', type: 'crystal' },
-  { id: `${game.id}-crystal-60`, name: `60 ${game.crystalName}`, amount: 60, price: 60, currency: '₽', type: 'crystal' },
-  
-  // Subscriptions
-  { id: `${game.id}-subscription`, name: game.subscriptionName, amount: 1, price: 300, currency: '₽', type: 'subscription' },
-  
-  // Battle Pass
-  { id: `${game.id}-bp-basic`, name: 'Жемчужный гимн', amount: 1, price: 635, currency: '₽', type: 'battlepass' },
-  { id: `${game.id}-bp-premium`, name: 'Жемчужный хор', amount: 1, price: 1250, currency: '₽', type: 'battlepass' }
-];
+const generateProducts = (game: Game): Product[] => {
+  // Соответствие id из базы для каждого товара
+  if (game.id === 'genshin') {
+    return [
+      { id: 10, name: '6480 Кристаллов сотворения', amount: 6480, price: 6400, currency: '₽', type: 'crystal' },
+      { id: 11, name: '3280 Кристаллов сотворения', amount: 3280, price: 3280, currency: '₽', type: 'crystal' },
+      { id: 12, name: '1980 Кристаллов сотворения', amount: 1980, price: 1980, currency: '₽', type: 'crystal' },
+      { id: 13, name: '980 Кристаллов сотворения', amount: 980, price: 980, currency: '₽', type: 'crystal' },
+      { id: 14, name: '300 Кристаллов сотворения', amount: 300, price: 300, currency: '₽', type: 'crystal' },
+      { id: 15, name: '60 Кристаллов сотворения', amount: 60, price: 60, currency: '₽', type: 'crystal' },
+      { id: 16, name: 'Благословение полой луны', amount: 1, price: 300, currency: '₽', type: 'subscription' },
+      { id: 17, name: 'Жемчужный гимн', amount: 1, price: 635, currency: '₽', type: 'battlepass' },
+      { id: 18, name: 'Жемчужный хор', amount: 1, price: 1250, currency: '₽', type: 'battlepass' }
+    ];
+  }
+  if (game.id === 'hsr') {
+    return [
+      { id: 20, name: '6480 Сущности древних снов', amount: 6480, price: 6400, currency: '₽', type: 'crystal' },
+      { id: 21, name: '3280 Сущности древних снов', amount: 3280, price: 3280, currency: '₽', type: 'crystal' },
+      { id: 22, name: '1980 Сущности древних снов', amount: 1980, price: 1980, currency: '₽', type: 'crystal' },
+      { id: 23, name: '980 Сущности древних снов', amount: 980, price: 980, currency: '₽', type: 'crystal' },
+      { id: 24, name: '300 Сущности древних снов', amount: 300, price: 300, currency: '₽', type: 'crystal' },
+      { id: 25, name: '60 Сущности древних снов', amount: 60, price: 60, currency: '₽', type: 'crystal' },
+      { id: 26, name: 'Пропуск снабжения экспресса', amount: 1, price: 300, currency: '₽', type: 'subscription' },
+      { id: 27, name: 'Слава Безымянных', amount: 1, price: 635, currency: '₽', type: 'battlepass' },
+      { id: 28, name: 'Медаль Безымянных', amount: 1, price: 1250, currency: '₽', type: 'battlepass' }
+    ];
+  }
+  if (game.id === 'zzz') {
+    return [
+  { id: 30, name: '6480 Монохромов', amount: 6480, price: 6400, currency: '₽', type: 'crystal' },
+  { id: 31, name: '3280 Монохромов', amount: 3280, price: 3280, currency: '₽', type: 'crystal' },
+  { id: 32, name: '1980 Монохромов', amount: 1980, price: 1980, currency: '₽', type: 'crystal' },
+  { id: 33, name: '980 Монохромов', amount: 980, price: 980, currency: '₽', type: 'crystal' },
+  { id: 34, name: '300 Монохромов', amount: 300, price: 300, currency: '₽', type: 'crystal' },
+  { id: 35, name: '60 Монохромов', amount: 60, price: 60, currency: '₽', type: 'crystal' },
+      { id: 36, name: 'Интернот-подписка', amount: 1, price: 300, currency: '₽', type: 'subscription' },
+      { id: 37, name: 'Фонд Риду: Продвинутый план', amount: 1, price: 635, currency: '₽', type: 'battlepass' },
+      { id: 38, name: 'Фонд Риду: Премиальный план', amount: 1, price: 1250, currency: '₽', type: 'battlepass' }
+    ];
+  }
+  return [];
+};
 
 const getProductIcon = (type: string) => {
   switch (type) {

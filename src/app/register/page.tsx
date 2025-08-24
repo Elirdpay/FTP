@@ -16,7 +16,7 @@ export default function RegisterPage(){
     e.preventDefault()
     setError('')
     if (!email || !email.includes('@')){ setError('Введите корректный email'); return }
-    if (!password || password.length < 6){ setError('Пароль должен быть не менее 6 символов'); return }
+  if (!password || password.length < 8){ setError('Пароль должен быть не менее 8 символов'); return }
     if (password !== confirm){ setError('Пароли не совпадают'); return }
     setLoading(true)
     try{
@@ -26,12 +26,26 @@ export default function RegisterPage(){
         const j = await res.json().catch(()=>({})); setError(j.detail || 'Ошибка'); toast(j.detail || 'Ошибка'); setLoading(false); return
       }
       // auto-login
-      const data = new FormData(); data.append('username', email); data.append('password', password)
-      try{
-  const tokenRes = await fetch('/api/auth/login', { method: 'POST', body: data })
-        if (tokenRes.ok){ const j = await tokenRes.json(); localStorage.setItem('access_token', j.access_token); toast('Регистрация успешна, вы вошли в систему'); router.push('/') }
-        else { toast('Регистрация успешна, войдите в систему'); router.push('/login') }
-      }catch(e){ console.error('fetch /token after register failed', e); toast('Регистрация успешна, войдите в систему'); router.push('/login') }
+      try {
+        const tokenRes = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        })
+        if (tokenRes.ok) {
+          const j = await tokenRes.json();
+          localStorage.setItem('access_token', j.access_token);
+          toast('Регистрация успешна, вы вошли в систему');
+          router.push('/')
+        } else {
+          toast('Регистрация успешна, войдите в систему');
+          router.push('/login')
+        }
+      } catch(e) {
+        console.error('fetch /api/auth/login after register failed', e);
+        toast('Регистрация успешна, войдите в систему');
+        router.push('/login')
+      }
     }catch(e:any){ console.error(e); setError('Ошибка'); toast('Ошибка') }finally{ setLoading(false) }
   }
 
