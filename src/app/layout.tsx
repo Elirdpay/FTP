@@ -19,6 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased flex flex-col min-h-screen">
+  <img src="/character-left.png" alt="Character" className="character-left-glow" />
+  <img src="/character-right.png" alt="Character Right" className="character-right-glow" />
         <ParticlesBackground />
         <ErrorReporter />
         <Script
@@ -32,7 +34,7 @@ export default function RootLayout({
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
         <main className="flex-1">{children}</main>
-        <Footer />   {/* 👈 футер теперь тут */}
+        <Footer />
         <VisualEditsMessenger />
       </body>
     </html>

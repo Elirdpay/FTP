@@ -1,0 +1,346 @@
+INFO:     Will watch for changes in these directories: ['/workspaces/FTP']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [95523] using WatchFiles
+INFO:     Started server process [95554]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:58462 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45062 - "POST /auth/login HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMyIsImVtYWlsIjoiZW52dXNlckBleGFtcGxlLmNvbSIsImV4cCI6MTc1NjE0MjEzMX0.0ZME_NdaIWvjz7-wJM_bc_CQd
+[ERROR] JWT decode failed: Invalid crypto padding
+INFO:     127.0.0.1:42964 - "GET /me/cart HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:58336 - "POST /auth/login HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMyIsImVtYWlsIjoiZW52dXNlckBleGFtcGxlLmNvbSIsImV4cCI6MTc1NjE0MjIxMH0.6PlvtPYXprRYuG3cNlNzDwQ0-ZMz24eowDPGVUceVIQ
+[DEBUG] decoded payload: {'sub': '13', 'email': 'envuser@example.com', 'exp': 1756142210}
+INFO:     127.0.0.1:59868 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: mock-token
+[ERROR] JWT decode failed: Not enough segments
+INFO:     127.0.0.1:59520 - "GET /me/cart HTTP/1.1" 401 Unauthorized
+[DEBUG] raw token: mock-token
+[ERROR] JWT decode failed: Not enough segments
+INFO:     127.0.0.1:59520 - "GET /me/profile HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:59530 - "POST /auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:47842 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47842 - "POST /auth/login HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47852 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:47842 - "GET /me/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47842 - "GET /products/resolve?name=21 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46148 - "GET /products/resolve?name=13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47842 - "GET /products/resolve?name=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46164 - "GET /products/resolve?name=11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47842 - "GET /products/resolve?name=21 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47842 - "GET /products/resolve?name=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47842 - "GET /products/resolve?name=13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47842 - "GET /products/resolve?name=11 HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:43264 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:44714 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:44714 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:44714 - "GET /me/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44714 - "GET /products/resolve?name=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44714 - "GET /products/resolve?name=13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44728 - "GET /products/resolve?name=21 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44734 - "GET /products/resolve?name=11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44714 - "GET /products/resolve?name=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44714 - "GET /products/resolve?name=13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44714 - "GET /products/resolve?name=21 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44728 - "GET /products/resolve?name=11 HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:44714 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:42442 - "POST /me/checkout HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:42442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:42442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:42442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:36122 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:36122 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDIyNTJ9.ciqVAzOPeWaH9-WKaXDyc4SG8pp8TPgTUXWLo7Y9sbU
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142252}
+INFO:     127.0.0.1:36122 - "GET /me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50776 - "POST /auth/login HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:50776 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:50776 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:50776 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:50776 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:37540 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:37540 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:37540 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:55272 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "POST /me/cart/add HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55272 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/profile HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=14 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=15 HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:55272 - "GET /me/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55272 - "GET /products/resolve?name=16 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55272 - "GET /products/resolve?name=14 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=16 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55272 - "GET /products/resolve?name=11 HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "POST /me/cart/update HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=16 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55272 - "GET /products/resolve?name=14 HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "POST /me/cart/update HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55272 - "GET /products/resolve?name=23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=14 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /products/resolve?name=11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55272 - "GET /products/resolve?name=16 HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "POST /me/cart/clear HTTP/1.1" 200 OK
+[DEBUG] raw token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNCIsImVtYWlsIjoibmVvbnRvcDEyM2tla0BnbWFpbC5jb20iLCJleHAiOjE3NTYxNDI0MTR9.rWsz5L_tUrw8H_s2f3uE3x8_bd5n1jw2j7ayq8QuI-Y
+[DEBUG] decoded payload: {'sub': '14', 'email': 'neontop123kek@gmail.com', 'exp': 1756142414}
+INFO:     127.0.0.1:38442 - "GET /me/cart HTTP/1.1" 200 OK

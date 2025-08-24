@@ -88,6 +88,8 @@ const HeroBanner = () => {
                 background: `url(${banner.image}) center/cover no-repeat`
               } : { background: banner.background }}
             >
+              {/* dark overlay to improve text contrast */}
+              <div className="absolute inset-0 bg-black/55 pointer-events-none"></div>
               <div className="relative h-full flex items-center justify-between p-8 md:p-12">
                 {/* Content */}
                 <div className="flex-1 text-white">
@@ -96,9 +98,9 @@ const HeroBanner = () => {
                       {banner.discount}
                     </span>
                   </div>
-                  <h1 className="text-3xl md:text-5xl font-bold mb-2">{banner.title}</h1>
-                  <p className="text-lg md:text-xl text-white/90 mb-2">{banner.subtitle}</p>
-                  <p className="text-white/80 mb-6 max-w-md">{banner.description}</p>
+                  <h1 className="text-3xl md:text-5xl font-bold mb-2 hero-banner-heading">{banner.title}</h1>
+                  <p className="text-lg md:text-xl text-white font-semibold mb-2 hero-banner-subtitle">{banner.subtitle}</p>
+                  <p className="text-white font-medium mb-6 max-w-md hero-banner-desc">{banner.description}</p>
                   <a
                     href={banner.href}
                     className="inline-block px-6 py-3 brand-gradient text-primary-foreground font-semibold rounded-xl brand-glow hover:scale-105 transition-transform"
@@ -107,14 +109,16 @@ const HeroBanner = () => {
                   </a>
                 </div>
 
-                {/* Game Logo/Icon Area */}
-                <div className="hidden md:flex items-center justify-center w-48 h-48 bg-white/10 backdrop-blur-sm rounded-full">
-                  <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-2xl font-bold text-white">
-                      {banner.title.split(' ').map(word => word[0]).join('')}
-                    </span>
+                {/* Game Logo/Icon Area (hidden for genshin) */}
+                {banner.id !== 'genshin' && (
+                  <div className="hidden md:flex items-center justify-center w-48 h-48 bg-white/10 backdrop-blur-sm rounded-full">
+                    <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
+                      <span className="text-2xl font-bold text-white">
+                        {banner.title.split(' ').map(word => word[0]).join('')}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           ))}

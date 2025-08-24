@@ -45,12 +45,9 @@ export default function PrimogemsBackground() {
     let animationId: number;
 
     function animate() {
-      // фон черно-бирюзовый
-      const gradient = ctx.createLinearGradient(0, 0, 0, height);
-      gradient.addColorStop(0, "#000000");
-      gradient.addColorStop(1, "#001f2f");
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, width, height);
+  // фон матовый тёмный (#020202)
+  ctx.fillStyle = "#020202";
+  ctx.fillRect(0, 0, width, height);
 
       for (const p of primogems) {
         ctx.save();
@@ -88,7 +85,7 @@ export default function PrimogemsBackground() {
         left: 0,
         width: "100%",
         height: "100%",
-        zIndex: -1,
+          zIndex: -2,
       }}
     />
   );

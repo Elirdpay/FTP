@@ -5,7 +5,7 @@
 
 :root {
   /* Dark theme from Free To Pay example */
-  --color-background: #05080d;
+.btn-subtle { background: linear-gradient(90deg, #fff, #eee); border: 1px solid #ccc; }
   --color-background-soft: #0a1117;
   --color-foreground: #e8fefe;
 
@@ -15,10 +15,6 @@
   --color-popover: #0e1922;
   --color-popover-foreground: #e8fefe;
 
-  --color-primary: #00ffe0; /* Brand cyan */
-  /* toned down primary for less saturated buttons */
-  --color-primary: #00c8b0;
-  --color-primary-foreground: #001e1e;
 
   --color-secondary: #0a1117;
   --color-secondary-foreground: #e8fefe;
@@ -34,10 +30,12 @@
 
   --color-border: #0f2d2d;
   --color-input: #0f2d2d;
-  --color-ring: #00ffe0;
 
-  --color-brand: #00ffe0;
-  --color-brand-2: #00a6a6;
+    --color-primary: #fff;
+    --color-primary-foreground: #000;
+    --color-ring: #fff;
+    --color-brand: #fff;
+    --color-brand-2: #000;
   --color-text-dim: #94bfbf;
   --color-stroke: #0f2d2d;
 
@@ -82,7 +80,7 @@
 
 @layer base {
   :root {
-    --background: var(--color-background);
+  --background: #020202;
     --foreground: var(--color-foreground);
     --card: var(--color-card);
     --card-foreground: var(--color-card-foreground);
@@ -110,6 +108,70 @@
   }
 
 body {
+
+.character-left-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  /* Ставим ниже, чтобы не закрывала контент */
+  z-index: -1;
+  pointer-events: none;
+  /* Сделать более яркой и заметной */
+  filter: brightness(2) saturate(1.05) contrast(1.05) drop-shadow(0 0 30px rgba(255,255,255,0.08));
+  opacity: 1;
+  transition: filter .3s ease, opacity .3s ease, transform .3s ease;
+  mix-blend-mode: normal;
+  /* Поддержка для <img>: сохранить пропорции и масштаб */
+  width: auto;
+  max-height: 100vh;
+  object-fit: contain;
+  transform: translateX(-6%);
+  /* Плавный переход справа: маска делает край прозрачным, чтобы изображение сливалось с фоном */
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 65%, transparent 95%);
+  mask-image: linear-gradient(to right, black 0%, black 65%, transparent 95%);
+  /* Небольшое размытие по краю для более мягкого перехода */
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* Правый персонаж: зеркальные стили */
+.character-right-glow {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  filter: brightness(1.9) saturate(1.05) contrast(1.05) drop-shadow(0 0 60px rgba(255,255,255,0.06));
+  opacity: 1;
+  transition: filter .3s ease, opacity .3s ease, transform .3s ease;
+  mix-blend-mode: normal;
+  width: auto;
+  max-height: 100vh;
+  object-fit: contain;
+  transform: translateX(45%) translateY(11%);
+  /* Маска слева -> прозрачность к левому краю изображения */
+  -webkit-mask-image: linear-gradient(to left, black 0%, black 65%, transparent 95%);
+  mask-image: linear-gradient(to left, black 0%, black 65%, transparent 95%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  box-shadow: 0 0 60px rgba(255,255,255,0.08), 0 0 120px rgba(255,255,255,0.04);
+}
+
+/* Поднимаем слои основного контента выше фоновых слоёв */
+main,
+header,
+footer,
+.site-header,
+.site-footer {
+  position: relative;
+  z-index: 20;
+}
+/* Персонаж остаётся позади контента, но не скрыт полностью */
+.character-left-glow {
+  z-index: 0;
+}
   position: relative;
 }
 
@@ -123,13 +185,30 @@ body {
 }
 
   body {
-      padding: 0;
-      margin: 0;
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(270deg, #000000, #00FFFF, #000000);
-      background-size: 600% 600%;
-      animation: gradientAnimation 15s ease infinite;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: #020202;
+  background-size: initial;
+  position: relative;
+  font-family: sans-serif;
+  color: var(--color-foreground);
+  line-height: 1.5;
+  font-size: 14px;
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
+}
       font-family: sans-serif;
     color: var(--color-foreground);
     line-height: 1.5;
@@ -153,6 +232,19 @@ body {
     font-family: var(--font-display);
     margin: 20px 0 14px 0;
   }
+
+.hero-banner-heading {
+  color: #ffffff;
+  text-shadow: 0 6px 24px rgba(0,0,0,0.6);
+}
+.hero-banner-subtitle {
+  color: #eafcff;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.5);
+}
+.hero-banner-desc {
+  color: #dff7f7;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.45);
+}
 
   h3 {
     font-size: 18px;
@@ -183,7 +275,7 @@ body {
   }
 
   .brand-gradient {
-    background: linear-gradient(90deg, #00b3a0, #00807a);
+  background: linear-gradient(90deg, #000, #fff);
   }
 .bg-card, [class*="bg-card"] { background-color: var(--card) !important; }
 .bg-muted, [class*="bg-muted"] { background-color: var(--muted) !important; }
