@@ -109,10 +109,9 @@ export function ThemeCharacters() {
         /* Characters should sit behind the UI and not intercept clicks */
         .theme-character {
           position: fixed;
-          width: auto;
-          height: 100vh; /* full viewport height to match screenshot */
-          max-width: 520px;
-          object-fit: cover;
+          width: auto; /* let image keep its intrinsic width */
+          max-height: 100vh; /* scale down only if taller than viewport */
+          max-width: none; /* allow full intrinsic width to avoid horizontal cropping */
           pointer-events: none;
           user-select: none;
           opacity: 1;
@@ -146,16 +145,30 @@ export function ThemeCharacters() {
           top: 0;
           bottom: 0;
           transform: translateX(-4%); /* slight overlap like on screenshot but not clipped */
+          /* Fade the INNER (right) edge by 0.5cm so image smoothly blends to background */
+          -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 10%), rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 10%), rgba(0,0,0,0) 100%);
+          -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
         }
 
         /* RIGHT character — LIGHT theme (default).
            Now set to match the DARK theme positions so light and dark
            visually align while keeping separate rules for future tweaks. */
         .theme-character.right {
-          right: -12vw; /* keep almost fully visible: small negative to peek out but not clipped */
-          top: 50px;
+          right: -46vw; /* keep almost fully visible: small negative to peek out but not clipped */
+          top: 30px;
           bottom: 0;
           transform: translateX(2%);
+          /* Fade the INNER (left) edge by 0.5cm so image smoothly blends to background */
+          -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 10%), rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 10%), rgba(0,0,0,0) 100%);
+          -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
         }
 
         /* LEFT character — DARK theme overrides. Edit these values to move left character in dark theme */
@@ -164,14 +177,28 @@ export function ThemeCharacters() {
           top: 0;
           bottom: 0;
           transform: translateX(-4%); /* slight overlap like on screenshot but not clipped */
+          /* Dark theme: fade inner (right) edge */
+          -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 10%), rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 10%), rgba(0,0,0,0) 100%);
+          -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
         }
 
         /* RIGHT character — DARK theme overrides. Edit these values to move right character in dark theme */
         .dark .theme-character.right {
-          right: -10vw; /* keep almost fully visible: small negative to peek out but not clipped */
+          right: -30vw; /* keep almost fully visible: small negative to peek out but not clipped */
           top: 120px;
           bottom: 0;
           transform: translateX(2%);
+          /* Dark theme: fade inner (left) edge */
+          -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 10%), rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 10%), rgba(0,0,0,0) 100%);
+          -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
         }
 
         /* Hide on small screens */
