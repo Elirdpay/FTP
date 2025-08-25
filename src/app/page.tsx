@@ -1,6 +1,6 @@
 import Header from '@/components/sections/header';
 import HeroBanner from '@/components/sections/hero-banner';
-// import PopularItems from '@/components/sections/popular-items';
+import PopularItems from '@/components/sections/popular-items';
 import GameSections from '@/components/sections/game-sections';
 import Footer from '@/components/sections/footer';
 
@@ -20,7 +20,7 @@ export default function HomePage() {
           </p>
         </section>
         
-  {/* <PopularItems /> */}
+        <PopularItems />
         
         {/* Services Section */}
         <section className="container text-center py-8">

@@ -5,9 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from pydantic import BaseModel
 import sqlite3
-import os
-from dotenv import load_dotenv
-load_dotenv()
 import hashlib
 import jwt
 from datetime import datetime, timedelta
@@ -17,7 +14,7 @@ app = FastAPI()
 DATABASE = "db/app.db"
 
 # JWT settings (simple demo - for production use secure key management)
-SECRET_KEY = os.getenv("SECRET_KEY", "change-this-secret")
+SECRET_KEY = "change-this-secret"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24
 
@@ -141,15 +138,11 @@ def login_new(data: dict = Body(...)):
     return {"access_token": access_token, "token_type": "bearer"}
 
 def get_current_user(token: str = Depends(oauth2_scheme)):
-    import sys
-    print(f"[DEBUG] raw token: {token}", file=sys.stderr)
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        print(f"[DEBUG] decoded payload: {payload}", file=sys.stderr)
         user_id = int(payload.get("sub"))
-    except Exception as e:
-        print(f"[ERROR] JWT decode failed: {e}", file=sys.stderr)
-        raise HTTPException(status_code=401, detail=f"Invalid token: {e}")
+    except Exception:
+        raise HTTPException(status_code=401, detail="Invalid token")
     conn = get_db()
     cur = conn.cursor()
     # select standard fields plus balance and tokens

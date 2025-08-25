@@ -10,11 +10,6 @@ export async function POST(req: NextRequest) {
     return new NextResponse(text, { status: r.status, headers: { 'Content-Type': r.headers.get('content-type') || 'application/json' } })
   }catch(e){
     console.error('proxy /api/auth/register error', e)
-    // Fallback mock for local development — return successful registration
-    if (process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_API_MOCK === '1') {
-      const mock = { detail: 'Mock user created', id: 'mock-user', email: 'local@mock' }
-      return NextResponse.json(mock, { status: 201 })
-    }
     return NextResponse.json({ detail: 'Proxy error' }, { status: 502 })
   }
 }
